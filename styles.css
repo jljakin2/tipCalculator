@@ -66,7 +66,7 @@ header {
   background: var(--white);
   border-radius: 1.5rem 1.5rem 0 0;
 
-  padding: 2em;
+  padding: 1em;
 }
 
 /* form */
@@ -102,7 +102,7 @@ header {
   border-radius: 0.3125rem;
   font-family: inherit;
   text-align: right;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
   width: 100%;
   margin-top: 0.5em;
@@ -115,7 +115,7 @@ header {
 }
 
 .input--text::placeholder {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-family: inherit;
 }
 
@@ -212,3 +212,80 @@ header {
 }
 
 /* ===== END OF MODIFIERS ===== */
+/* ===== MEDIA QUERIES ===== */
+@media (min-width: 50em) {
+  .container {
+    width: 90%;
+
+    margin: 0 auto;
+    padding: 3em;
+  }
+}
+
+@media (min-width: 87.5em) {
+  body {
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    min-height: 100vh;
+    /* need margin between header and main so this brings the whole app back to center */
+    margin-top: -2em;
+  }
+
+  header {
+    margin-bottom: 2em;
+    padding: 0;
+  }
+
+  .row {
+    align-items: center;
+  }
+
+  .container {
+    border-radius: 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: 57.5rem;
+    padding: 2.25em;
+  }
+
+  .form {
+    width: 46%;
+  }
+
+  .form__control {
+    margin: 0;
+  }
+
+  .form__control + .form__control {
+    margin-top: 3em;
+  }
+
+  .total {
+    display: flex;
+    flex-direction: column;
+
+    width: 46%;
+    padding: 1em 1em 1.5em 1em;
+  }
+
+  .total h1 {
+    font-size: 3rem;
+  }
+
+  .btn {
+    margin-top: auto;
+  }
+
+  .tip__label {
+    padding: 0.15em 0;
+  }
+}
+/* ===== END OF MEDIA QUERIES ===== */
