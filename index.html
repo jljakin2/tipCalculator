@@ -1,44 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-32x32.png"
+      type="image/x-icon"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  Bill
+    <link rel="stylesheet" href="styles.css" />
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
 
-  Number of People
+  <body>
+    <header>
+      <img src="./images/logo.svg" alt="logo for splitter" class="logo" />
+      <p class="sub-title">Hit <em>Enter</em> when ready to calculate</p>
+    </header>
 
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <main>
+      <div class="container">
+        <form class="form" autocomplete="off">
+          <div class="form__control form__control--text">
+            <small class="label label--dark">Bill</small>
+            <input
+              type="text"
+              class="input--text"
+              id="bill-amount"
+              placeholder="0"
+            />
+            <img
+              class="input--icon"
+              src="./images/icon-dollar.svg"
+              alt="dollar sign icon"
+            />
+          </div>
+          <div class="form__control form__tip">
+            <small class="label label--dark">Select Tip %</small>
+            <div class="form__tip--options">
+              <input
+                type="radio"
+                name="tip"
+                id="five"
+                class="tip__radio"
+                value="5"
+              />
+              <label for="five" class="tip__label">5%</label>
+              <input
+                type="radio"
+                name="tip"
+                id="ten"
+                class="tip__radio"
+                value="10"
+              />
+              <label for="ten" class="tip__label">10%</label>
+              <input
+                type="radio"
+                name="tip"
+                id="fifteen"
+                class="tip__radio"
+                value="15"
+              />
+              <label for="fifteen" class="tip__label">15%</label>
+              <input
+                type="radio"
+                name="tip"
+                id="twenty-five"
+                class="tip__radio"
+                value="25"
+              />
+              <label for="twenty-five" class="tip__label">25%</label>
+              <input
+                type="radio"
+                name="tip"
+                id="fifty"
+                class="tip__radio"
+                value="50"
+              />
+              <label for="fifty" class="tip__label">50%</label>
+              <input
+                type="text"
+                class="input--text input--custom"
+                id="custom-tip"
+                class="tip__radio"
+                placeholder="Custom"
+              />
+            </div>
+          </div>
+          <div class="form__control form__control--text">
+            <small class="label label--dark">Number of People</small>
+            <input
+              type="text"
+              class="input--text"
+              id="num-people"
+              placeholder="0"
+            />
+            <img
+              class="input--icon"
+              src="./images/icon-person.svg"
+              alt="person icon"
+            />
+          </div>
+        </form>
+        <div class="total">
+          <div class="total__tip row">
+            <div class="label__container">
+              <small class="label label--light">Tip Amount</small>
+              <small class="sub-label">/ person</small>
+            </div>
+            <h1 class="dollar__amount" id="tip-amount">$0.00</h1>
+          </div>
+          <div class="total__amount row">
+            <div class="label__container">
+              <small class="label label--light">Total</small>
+              <small class="sub-label">/ person</small>
+            </div>
+            <h1 class="dollar__amount" id="total-amount">$0.00</h1>
+          </div>
+          <button class="btn">Reset</button>
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>

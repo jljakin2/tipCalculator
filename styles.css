@@ -1,0 +1,214 @@
+:root {
+  --primary-cyan: #26c0ab;
+  --btn-hover: #9fe8df;
+  --very-dark-cyan: #00494d;
+  --dark-grayish-cyan1: #5e7a7d;
+  --dark-grayish-cyan2: #7f9c9f;
+  --light-grayish-cyan1: #c5e4e7;
+  --light-grayish-cyan2: #f4fafa;
+  --white: #ffffff;
+}
+
+/* ===== GLOBAL ===== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--light-grayish-cyan1);
+  font-family: "Space Mono", monospace;
+}
+
+input,
+label {
+  cursor: pointer;
+}
+
+/* ===== END OF GLOBAL ===== */
+/* ===== GENERAL ===== */
+.input--text {
+  font-family: inherit;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 10vh;
+  padding: 3em 0;
+}
+
+.sub-title {
+  font-size: 0.9rem;
+
+  margin-top: 2em;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+/* ===== END OF GENERAL ===== */
+/* ===== MAIN ===== */
+.container {
+  background: var(--white);
+  border-radius: 1.5rem 1.5rem 0 0;
+
+  padding: 2em;
+}
+
+/* form */
+.form__control {
+  position: relative;
+
+  margin-bottom: 3em;
+}
+
+.label {
+  font-size: 1rem;
+  color: var(--dark-grayish-cyan1);
+
+  display: block;
+}
+
+.sub-label {
+  font-size: 0.8125rem;
+  color: var(--dark-grayish-cyan2);
+}
+
+.label--dark {
+  color: var(--dark-grayish-cyan1);
+}
+
+.label--light {
+  color: var(--white);
+}
+
+.input--text {
+  border: none;
+  background: var(--light-grayish-cyan2);
+  border-radius: 0.3125rem;
+  font-family: inherit;
+  text-align: right;
+  font-size: 1.5rem;
+
+  width: 100%;
+  margin-top: 0.5em;
+  padding: 0.25em 0.5em;
+}
+
+.input--text:focus {
+  outline: none;
+  border: 1px solid var(--primary-cyan);
+}
+
+.input--text::placeholder {
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+
+.input--custom {
+  width: 30%;
+  margin: 0;
+}
+
+.input--icon {
+  position: absolute;
+  top: 3.25rem;
+  left: 0.75rem;
+}
+
+.form__tip--options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 1rem;
+
+  width: 100%;
+  margin-top: 0.5em;
+}
+
+.tip__label {
+  background: var(--very-dark-cyan);
+  border-radius: 0.3125rem;
+  font-size: 1.5rem;
+  color: var(--white);
+  text-align: center;
+  cursor: pointer;
+
+  width: 30%;
+  padding: 0.5em 0;
+
+  transition: 0.2s ease;
+}
+
+.tip__label:focus,
+.tip__label:hover {
+  background-color: var(--btn-hover);
+}
+
+.tip__radio {
+  display: none;
+}
+
+.tip__radio:checked + .tip__label {
+  background-color: var(--primary-cyan);
+}
+
+/* total */
+.total {
+  background: var(--very-dark-cyan);
+  border-radius: 1rem;
+
+  padding: 1.5em 1em;
+}
+
+.total__tip {
+  margin-bottom: 2em;
+}
+
+.dollar__amount {
+  font-size: 2rem;
+  color: var(--primary-cyan);
+  letter-spacing: -0.67px;
+  font-weight: 400;
+}
+
+.btn {
+  background: var(--primary-cyan);
+  border-radius: 0.3125rem;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--very-dark-cyan);
+  font-family: inherit;
+  cursor: pointer;
+
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 2em;
+
+  transition: 0.2s ease;
+}
+
+.btn:focus,
+.btn:hover {
+  background: var(--btn-hover);
+}
+/* ===== END OF MAIN ===== */
+/* ===== MODIFIERS ===== */
+.error {
+}
+
+/* ===== END OF MODIFIERS ===== */
