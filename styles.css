@@ -7,6 +7,7 @@
   --light-grayish-cyan1: #c5e4e7;
   --light-grayish-cyan2: #f4fafa;
   --white: #ffffff;
+  --error: #e17052;
 }
 
 /* ===== GLOBAL ===== */
@@ -119,14 +120,19 @@ header {
   font-family: inherit;
 }
 
-.input--custom {
+.custom-tip__control {
   width: 30%;
+  margin: 0;
+}
+
+#custom-tip {
+  height: 100%;
   margin: 0;
 }
 
 .input--icon {
   position: absolute;
-  top: 3.25rem;
+  top: 2.95rem;
   left: 0.75rem;
 }
 
@@ -208,9 +214,25 @@ header {
 }
 /* ===== END OF MAIN ===== */
 /* ===== MODIFIERS ===== */
-.error {
+.error--text {
+  display: none;
+  position: absolute;
+  right: 0;
+
+  color: var(--error);
 }
 
+.error--text--reg {
+  top: 0;
+}
+
+.error--text--custom {
+  bottom: -2rem;
+}
+
+.error--border {
+  border: 2px solid var(--error);
+}
 /* ===== END OF MODIFIERS ===== */
 /* ===== MEDIA QUERIES ===== */
 @media (min-width: 50em) {
@@ -266,6 +288,10 @@ header {
 
   .form__control + .form__control {
     margin-top: 3em;
+  }
+
+  .input--icon {
+    top: 2.85rem;
   }
 
   .total {

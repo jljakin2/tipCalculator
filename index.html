@@ -39,6 +39,9 @@
               id="bill-amount"
               placeholder="0"
             />
+            <small class="label error--text error--text--reg"
+              >Placeholder</small
+            >
             <img
               class="input--icon"
               src="./images/icon-dollar.svg"
@@ -88,13 +91,18 @@
                 value="50"
               />
               <label for="fifty" class="tip__label">50%</label>
-              <input
-                type="text"
-                class="input--text input--custom"
-                id="custom-tip"
-                class="tip__radio"
-                placeholder="Custom"
-              />
+              <div class="custom-tip__control">
+                <input
+                  type="text"
+                  class="input--text"
+                  id="custom-tip"
+                  class="tip__radio"
+                  placeholder="Custom"
+                />
+                <small class="label error--text error--text--custom"
+                  >Placeholder</small
+                >
+              </div>
             </div>
           </div>
           <div class="form__control form__control--text">
@@ -105,6 +113,9 @@
               id="num-people"
               placeholder="0"
             />
+            <small class="label error--text error--text--reg"
+              >Placeholder</small
+            >
             <img
               class="input--icon"
               src="./images/icon-person.svg"
