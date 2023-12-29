@@ -13,7 +13,7 @@ const totalAmount = document.getElementById("total-amount");
 // >>>>>>>>>>
 
 // listen for when the user presses "enter"
-window.addEventListener("keydown", e => {
+window.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     // check for errors
     const billError = checkInputErrors(billAmount);
@@ -38,7 +38,7 @@ customTip.addEventListener("click", removePresetTip);
 // 1. clear custom tip input
 // 2. remove error border on custom tip, if there is one
 // 3. remove error label
-tipRadios.forEach(tipRadio =>
+tipRadios.forEach((tipRadio) =>
   tipRadio.addEventListener("click", () => {
     customTip.value = "";
     customTip.classList.remove("error--border");
@@ -46,7 +46,7 @@ tipRadios.forEach(tipRadio =>
   })
 );
 // when the text fields are typed into, remove any error messages for that input
-textFields.forEach(field => {
+textFields.forEach((field) => {
   field.addEventListener("input", removeErrorStyling);
 });
 
@@ -61,7 +61,7 @@ function findTipAmount() {
     tipVal = customTip.value / 100;
   } else {
     tipVal =
-      +[...tipRadios].filter(tipRadio => tipRadio.checked)[0].value / 100; // get the value for the only radio button that is checked
+      +[...tipRadios].filter((tipRadio) => tipRadio.checked)[0].value / 100; // get the value for the only radio button that is checked
   }
 
   const tipAmountVal = ((billVal * tipVal) / numOfPeopleVal).toFixed(2);
@@ -73,7 +73,7 @@ function findTipAmount() {
 }
 
 function removePresetTip() {
-  tipRadios.forEach(tipRadio => {
+  tipRadios.forEach((tipRadio) => {
     tipRadio.checked = false;
   });
 }
@@ -99,7 +99,7 @@ function checkInputErrors(node) {
   const errorType = {
     empty: "Can't be empty",
     isZero: "Can't be zero",
-    notNum: "Must be a number",
+    notNum: "Must be a valid dollar amount",
   };
 
   let errorsExist = false;
@@ -113,7 +113,7 @@ function checkInputErrors(node) {
     return errorsExist;
   }
 
-  if (!/^\d+$/.test(node.value)) {
+  if (!/^\d+(\.\d{1,2})?$/.test(node.value)) {
     errorLabel.innerText = errorType.notNum;
     errorLabel.style.display = "block";
     node.classList.add("error--border");
@@ -142,7 +142,7 @@ function checkRadioErrors(radios, custom) {
    * 2. check if any radio buttons are selected and if custom tip is a number. if not, signal error
    */
   let errorsExist = false;
-  let isChecked = [...radios].filter(radio => radio.checked);
+  let isChecked = [...radios].filter((radio) => radio.checked);
   const errorLabel = custom.nextElementSibling;
 
   if (isChecked.length === 0 && custom.value === "") {
